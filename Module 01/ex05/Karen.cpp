@@ -33,16 +33,25 @@ void	Karen::error()
 
 void	Karen::complain(std::string level)
 {
-	std::map<std::string, std::function<void()>> harls = {
-		{"DEBUG", std::bind(&Karen::debug, this)},
-		{"INFO", std::bind(&Karen::info, this)},
-		{"WARNING", std::bind(&Karen::warning, this)},
-		{"ERROR", std::bind(&Karen::error, this)}
+	int		i = 0;
+	std::string	tab[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
 	};
-	std::map<std::string, std::function<void()>>::iterator it = harls.find(level);
-	if (it != harls.end())
+
+	void	(Karen::*fct[4])(void);
+	fct[0] = &Karen::debug;
+	fct[1] = &Karen::info;
+	fct[2] = &Karen::warning;
+	fct[3] = &Karen::error;
+
+	while (i < 4)
 	{
-		it->second();
+		if (level.compare(tab[i]) == 0)
+			(this->*fct[i])();
+		i++;
 	}
 }
 

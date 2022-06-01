@@ -13,5 +13,5 @@ int	main()
 	std::cout << "Error level :" << std::endl;
 	karen.complain("ERROR");
 	std::cout << "Test level :" << std::endl;
-	karen.complain("coucou");
+	karen.complain("TEST");
 }
