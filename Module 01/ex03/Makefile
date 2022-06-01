@@ -9,7 +9,7 @@ LINK	=	-I/Weapon.hpp -I/HumanA.hpp -I/HumanB.hpp
 
 NAME	=	weapon
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)

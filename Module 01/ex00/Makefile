@@ -9,7 +9,7 @@ LINK	=	-I/Zombie.hpp
 
 NAME	=	zombie
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)
