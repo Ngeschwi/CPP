@@ -1,11 +1,7 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-# include <string>
-# include <stdio.h>
-# include <stdlib.h>
 # include <iostream>
-# include <iomanip>
 # include <math.h>
 
 class Fixed
