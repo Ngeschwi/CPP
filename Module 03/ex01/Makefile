@@ -8,7 +8,7 @@ LINK	=	-I/ClapTrap.hpp -I/ScavTrap.hpp
 
 NAME	=	scavtrap
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)
