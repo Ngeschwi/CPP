@@ -31,12 +31,12 @@ Fixed::Fixed(Fixed const & src)
 
 float	Fixed::toFloat(void) const
 {
-	return static_cast<float>(this->nbr) / pow(2, this->nbr_bits);
+	return static_cast<float>(this->nbr) / static_cast<float>(1 << this->nbr_bits);
 }
 
 int	Fixed::toInt(void) const
 {
-	return static_cast<int>(this->nbr) / pow(2, this->nbr_bits);
+	return static_cast<int>(this->nbr >> this->nbr_bits);
 }
 
 int	Fixed::getRawBits(void) const
