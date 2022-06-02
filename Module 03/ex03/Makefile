@@ -10,7 +10,7 @@ LINK	=	-I/ClapTrap.hpp -I/ScavTrap.hpp -I/FragTrap.hpp -I/DiamondTrap.hpp
 
 NAME	=	diamondtrap
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)
