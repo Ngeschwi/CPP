@@ -15,24 +15,41 @@ int	main()
 	DiamondTrap	diamond_A("Moi");
 	std::cout << "   -------------" << std::endl;
 
-	std::cout << "--- ClapTrap ---" << std::endl;
+	std::cout << "--- Claptrap : ---" << std::endl;
 	clap_A.attack("Jean");
+	std::cout << std::endl;
 	clap_A.takeDamage(6);
+	std::cout << std::endl;
 	clap_A.beRepaired(10);
-	std::cout << "--- ScavTrap ---" << std::endl;
-	scav_A.attack("Bob");
+	std::cout << std::endl << std::endl;
+
+	std::cout << "--- Scavtrap : ---" << std::endl;
+	scav_A.attack("Jean");
+	std::cout << std::endl;
 	scav_A.takeDamage(6);
+	std::cout << std::endl;
 	scav_A.beRepaired(10);
+	std::cout << std::endl;
 	scav_A.guardGate();
-	std::cout << "--- FragTrap ---" << std::endl;
+	std::cout << std::endl << std::endl;;
+
+	std::cout << "--- Fragtrap : ---" << std::endl;
 	frag_A.attack("George");
+	std::cout << std::endl;
 	frag_A.takeDamage(6);
+	std::cout << std::endl;
 	frag_A.beRepaired(10);
+	std::cout << std::endl;
 	frag_A.highFivesGuys();
+	std::cout << std::endl << std::endl;;
+
 	std::cout << "--- DiamondTrap ---" << std::endl;
 	diamond_A.attack("Jean-luc");
+	std::cout << std::endl;
 	diamond_A.takeDamage(6);
+	std::cout << std::endl;
 	diamond_A.beRepaired(10);
+	std::cout << std::endl;
 	diamond_A.whoAmI();
 	std::cout << "   -------------" << std::endl;
 

@@ -6,13 +6,13 @@
 # include <stdlib.h>
 # include <iostream>
 # include <iomanip>
-// # include "ScavTrap.hpp"
 
 class ClapTrap
 {
 	protected:
 		std::string	name;
 		int			hitpoints;
+		int			hitpoints_max;
 		int			energy_points;
 		int			attack_damage;
 
