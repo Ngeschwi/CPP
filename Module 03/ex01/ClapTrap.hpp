@@ -12,6 +12,7 @@ class ClapTrap
 	protected:
 		std::string	name;
 		int			hitpoints;
+		int			hitpoints_max;
 		int			energy_points;
 		int			attack_damage;
 
