@@ -7,7 +7,7 @@ class Fixed
 {
 	private:
 		int					nbr;
-		const static int	nbr_bits = 8;
+		const static int	nbr_bits;
 
 	public:
 		Fixed(void);
