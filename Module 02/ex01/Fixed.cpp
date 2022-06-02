@@ -17,11 +17,8 @@ Fixed::Fixed(const int nbr)
 
 Fixed::Fixed(const float nbr)
 {
-	int	rawBit;
-
-	std::memcpy(&rawBit, &nbr, sizeof(int));
 	std::cout << "Float constructor called" << std::endl;
-	this->setRawBits(rawBit);
+	this->setRawBits(nbr * (1 << this->nbr_bits));
 	return ;
 }
 
@@ -34,12 +31,12 @@ Fixed::Fixed(Fixed const & src)
 
 float	Fixed::toFloat(void) const
 {
-	return static_cast<float>(this->nbr >> this->nbr_bits);
+	return static_cast<float>(this->nbr) / pow(2, this->nbr_bits);
 }
 
 int	Fixed::toInt(void) const
 {
-	return static_cast<int>(this->nbr >> this->nbr_bits);
+	return static_cast<int>(this->nbr) / pow(2, this->nbr_bits);
 }
 
 int	Fixed::getRawBits(void) const
