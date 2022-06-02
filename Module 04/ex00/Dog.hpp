@@ -12,7 +12,7 @@ class Dog : public Animal
 
 		Dog &	operator=(Dog const & rhs);
 
-		void	makeSound(void) const override;
+		void	makeSound(void) const;
 };
 
 #endif
