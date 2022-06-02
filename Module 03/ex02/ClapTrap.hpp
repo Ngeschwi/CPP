@@ -6,7 +6,6 @@
 # include <stdlib.h>
 # include <iostream>
 # include <iomanip>
-// # include "ScavTrap.hpp"
 
 class ClapTrap
 {

@@ -29,6 +29,12 @@ std::string	ClapTrap::getName(void) const
 	return this->name;
 }
 
+void	ClapTrap::setName(std::string name)
+{
+	this->name = name;
+	return ;
+}
+
 void	ClapTrap::attack(std::string const & target)
 {
 	if (this->energy_points > 0 && this->hitpoints > 0)
