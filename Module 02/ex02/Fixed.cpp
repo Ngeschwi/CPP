@@ -2,26 +2,20 @@
 
 const int Fixed::nbr_bits = 8;
 
-Fixed::Fixed(void) : nbr(false)
+Fixed::Fixed(void) : nbr(0)
 {
 	return ;
 }
 
 Fixed::Fixed(const int nbr)
 {
-	float	save;
-
-	save = roundf(nbr * pow(2, this->nbr_bits));
-	this->setRawBits(save);
+	this->setRawBits(nbr << this->nbr_bits);
 	return ;
 }
 
 Fixed::Fixed(const float nbr)
 {
-	float	save;
-
-	save = roundf(nbr * pow(2, this->nbr_bits));
-	this->setRawBits(save);
+	this->setRawBits(nbr * (1 << this->nbr_bits));
 	return ;
 }
 
@@ -33,12 +27,12 @@ Fixed::Fixed(Fixed const & src)
 
 float	Fixed::toFloat(void) const
 {
-	return static_cast<float>(this->nbr) / pow(2, this->nbr_bits);
+	return static_cast<float>(this->nbr) / static_cast<float>(1 << this->nbr_bits);
 }
 
 int	Fixed::toInt(void) const
 {
-	return static_cast<int>(this->nbr) / pow(2, this->nbr_bits);
+	return static_cast<int>(this->nbr >> this->nbr_bits);
 }
 
 int	Fixed::getRawBits(void) const

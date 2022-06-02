@@ -18,16 +18,16 @@ int main(void)
 	if (c > b)
         std::cout << c << "  is superior to       " << b << std::endl;
     if (b < c)
-        std::cout << b << "       is inferior to       " << c << std::endl;
+        std::cout << b << "      is inferior to       " << c << std::endl;
     if (b >= d)
-        std::cout << b << "       is sup or equal to   " << d << std::endl;
+        std::cout << b << "      is sup or equal to   " << d << std::endl;
     if (a <= c)
         std::cout << c << "  is infe or equal to  " << a << std::endl;
     if (b == d)
-        std::cout << b << "       is equal to          " << d << std::endl;
+        std::cout << b << "      is equal to          " << d << std::endl;
     if (a != c)
 	{
-        std::cout << a << "        is different to      " << c << std::endl << std::endl;
+        std::cout << a << "       is different to      " << c << std::endl << std::endl;
 	}
 
 	std::cout << "--- Arithmetic operators : ---" << std::endl;
