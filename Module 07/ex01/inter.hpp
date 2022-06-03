@@ -11,13 +11,8 @@ void	fct_print(T arg) {
 
 template <typename T_tab>
 void	inter(T_tab *tab, int size, void (*fct)(T_tab &)) {
-	int	i = 0;
-
-	while (i < size)
-	{
+	for (int i = 0; i < size; i++)
 		fct(tab[i]);
-		i++;
-	}
 	return ;
 }
 

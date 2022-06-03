@@ -2,11 +2,12 @@
 
 int	main()
 {
-	int *tab = new int[4];
+	int	size = 10;
+	int *tab = new int[size];
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < size; i++)
 		tab[i] = i;
-	::inter(tab, 4, &(::fct_print));
+	::inter(tab, size, &(::fct_print));
 
 	delete [] tab;
 
