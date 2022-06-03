@@ -5,7 +5,7 @@ OBJS	=	$(SRCS:.cpp=.o)
 LINK	=	-I/whatever.hpp
 NAME	=	whatever
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)
