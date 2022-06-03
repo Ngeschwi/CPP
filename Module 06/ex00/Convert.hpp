@@ -39,7 +39,7 @@ class EmptyArg : public std::exception
 	public:
 		virtual const char* what() const throw()
 		{
-			return "Error Argument : null";
+			return "Error Argument : empty arg";
 		}
 };
 class NoNumericArg : public std::exception

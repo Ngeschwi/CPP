@@ -53,7 +53,7 @@ void	Convert::parseArg(std::string arg)
 		this->setType("char");
 		return ;
 	}
-	while (arg[i] == '-' || arg[i] == '+')
+	if (arg[0] == '-' || arg[0] == '+')
 		i++;
 	if (this->parseInfNanType(i, arg))
 		return ;
