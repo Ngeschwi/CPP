@@ -5,9 +5,12 @@
 
 int	 main()
 {
-	size_t	nbr = 4;
+	// Animal* test = new Animal();
+	// test->makeSound();
 
-	Animal** animals = new Animal*[nbr];
+	size_t	nbr = 2;
+
+	Animal* animals[nbr];
 	for (size_t i = 0; i < nbr; i++)
 	{
 		if (i < nbr / 2)

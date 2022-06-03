@@ -21,7 +21,7 @@ Brain &	Brain::operator=(Brain const & rhs)
 	{
 		while (i < 100)
 		{
-			this->setIdeas(rhs.getIdeas(i), i);
+			this->setIdeas(i, rhs.getIdeas(i));
 			i++;
 		}
 	}
@@ -39,7 +39,7 @@ void	Brain::setBrain(std::string idea)
 	return ;
 }
 
-void	Brain::setIdeas(std::string idea, int index)
+void	Brain::setIdeas(int index, std::string idea)
 {
 	if (index >= 0 && index < 100)
 		this->_ideas[index] = idea;

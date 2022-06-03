@@ -11,9 +11,9 @@ class Animal
 {
 	protected:
 		std::string	type;
+		Animal(void);
 	
 	public:
-		Animal(void);
 		Animal(Animal const & src);
 
 		Animal &	operator=(Animal const & rhs);

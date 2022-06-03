@@ -5,7 +5,7 @@ Cat::Cat(void)
 {
 	std::cout << "Default constructor Cat called" << std::endl;
 	this->type = "Cat";
-	this->Brain = new class Brain();
+	this->_Brain = new class Brain();
 	return ;
 }
 
@@ -17,15 +17,11 @@ Cat::Cat(Cat const & src)
 
 Cat &	Cat::operator=(Cat const & rhs)
 {
-	int	i = 0;
-
-	if (this != &rhs)
-		this->type = "Cat";
-	while (i < 100)
-	{
-		this->Brain->setIdeas(rhs.Brain->getIdeas(i), i);
-		i++;
-	}
+	if (this == &rhs)
+		return *this;
+	this->type = rhs.type;
+	this->_Brain = new Brain();
+	*this->_Brain = *rhs._Brain;
 	return *this;
 }
 
@@ -35,14 +31,25 @@ void	Cat::makeSound(void) const
 	return ;
 }
 
+void	Cat::setIdeas(int index, std::string idea)
+{
+	this->_Brain->setIdeas(index, idea);
+	return ;
+}
+
+std::string	Cat::getIdeas(int index) const
+{
+	return this->_Brain->getIdeas(index);
+}
+
 Brain*	Cat::getBrain(void) const
 {
-	return this->Brain;
+	return this->_Brain;
 }
 
 Cat::~Cat(void)
 {
 	std::cout << "Destructor Cat called" << std::endl;
-	delete this->Brain;
+	delete this->_Brain;
 	return ;
 }

@@ -4,10 +4,10 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : virtual public Animal
 {
 	private:
-		Brain* Brain;
+		Brain* _Brain;
 
 	public:
 		Cat(void);
@@ -17,6 +17,8 @@ class Cat : public Animal
 		Cat &	operator=(Cat const & rhs);
 
 		void			makeSound(void) const;
+		void			setIdeas(int index, std::string idea);
+		std::string		getIdeas(int index) const;
 		class Brain*	getBrain(void) const;
 };
 
