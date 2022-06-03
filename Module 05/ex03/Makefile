@@ -11,7 +11,7 @@ OBJS	=	$(SRCS:.cpp=.o)
 LINK	=	-I/Bureaucrat.hpp -I/Form.hpp -I/ShrubberyCreationForm.hpp -I/RobotomyRequestForm.hpp -I/PresidentialPardonForm.hpp -I/Intern.hpp
 NAME	=	Bureaucrat
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 
 all : $(NAME)
