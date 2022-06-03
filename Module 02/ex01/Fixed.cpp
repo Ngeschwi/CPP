@@ -11,14 +11,14 @@ Fixed::Fixed(void) : nbr(0)
 Fixed::Fixed(const int nbr)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->setRawBits(nbr << this->nbr_bits);
+	this->setRawBits(roundf(nbr << this->nbr_bits));
 	return ;
 }
 
 Fixed::Fixed(const float nbr)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->setRawBits(nbr * (1 << this->nbr_bits));
+	this->setRawBits(roundf(nbr * (1 << this->nbr_bits)));
 	return ;
 }
 
@@ -31,7 +31,7 @@ Fixed::Fixed(Fixed const & src)
 
 float	Fixed::toFloat(void) const
 {
-	return static_cast<float>(this->nbr) / static_cast<float>(1 << this->nbr_bits);
+	return static_cast<float>(this->nbr) / (1 << this->nbr_bits);
 }
 
 int	Fixed::toInt(void) const
