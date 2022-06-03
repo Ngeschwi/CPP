@@ -12,7 +12,7 @@ int	main()
 	std::cout << "--- FragTrap ---" << std::endl;
 	FragTrap	frag_A("Bryan");
 	std::cout << "--- DiamondTrap ---" << std::endl;
-	DiamondTrap	diamond_A("Moi");
+	DiamondTrap	diamond_A("Tanguy");
 	std::cout << "   -------------" << std::endl;
 
 	std::cout << "--- Claptrap : ---" << std::endl;
