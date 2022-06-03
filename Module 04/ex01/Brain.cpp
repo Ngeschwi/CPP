@@ -43,6 +43,8 @@ void	Brain::setIdeas(int index, std::string idea)
 {
 	if (index >= 0 && index < 100)
 		this->_ideas[index] = idea;
+	else
+		std::cout << "Too much ideas for an animal" << std::endl;
 	return ;
 }
 
@@ -50,6 +52,8 @@ std::string	Brain::getIdeas(int index) const
 {
 	if (index >= 0 && index < 100)
 		return this->_ideas[index];
+	else
+		return "Too much ideas for an animal";
 	exit(0);
 }
 

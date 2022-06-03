@@ -5,7 +5,7 @@ Dog::Dog(void)
 {
 	std::cout << "Default constructor Dog called" << std::endl;
 	this->type = "Dog";
-	this->Brain = new class Brain();
+	this->_Brain = new class Brain();
 	return ;
 }
 
@@ -17,15 +17,11 @@ Dog::Dog(Dog const & src)
 
 Dog &	Dog::operator=(Dog const & rhs)
 {
-	int	i = 0;
-
-	if (this != &rhs)
-		this->type = rhs.getType();
-	while (i < 100)
-	{
-		this->Brain->setIdeas(i, rhs.Brain->getIdeas(i));
-		i++;
-	}
+	if (this == &rhs)
+		return *this;
+	this->type = rhs.type;
+	this->_Brain = new Brain();
+	*this->_Brain = *rhs._Brain;
 	return *this;
 }
 
@@ -37,23 +33,23 @@ void	Dog::makeSound(void) const
 
 void	Dog::setIdeas(int index, std::string idea)
 {
-	Brain->setIdeas(index, idea);
+	this->_Brain->setIdeas(index, idea);
 	return ;
 }
 
 std::string	Dog::getIdeas(int index) const
 {
-	return Brain->getIdeas(index);
+	return this->_Brain->getIdeas(index);
 }
 
 Brain*	Dog::getBrain(void) const
 {
-	return this->Brain;
+	return this->_Brain;
 }
 
 Dog::~Dog(void)
 {
 	std::cout << "Destructor Dog called" << std::endl;
-	delete this->Brain;
+	delete this->_Brain;
 	return ;
 }

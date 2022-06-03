@@ -7,7 +7,7 @@
 class Cat : virtual public Animal
 {
 	private:
-		Brain* Brain;
+		Brain* _Brain;
 
 	public:
 		Cat(void);
