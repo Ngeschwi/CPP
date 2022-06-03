@@ -4,7 +4,7 @@
 int	main()
 {
 	ClapTrap	clap_A("Bob");
-	ScavTrap	scav_A("Bob");
+	ScavTrap	scav_A("Kevin");
 
 	std::cout << "--- Claptrap : ---" << std::endl;
 	clap_A.attack("Jean");
@@ -17,7 +17,7 @@ int	main()
 	std::cout << "--- Scavtrap : ---" << std::endl;
 	scav_A.attack("Jean");
 	std::cout << std::endl;
-	scav_A.takeDamage(6);
+	scav_A.takeDamage(100);
 	std::cout << std::endl;
 	scav_A.beRepaired(10);
 	std::cout << std::endl;
