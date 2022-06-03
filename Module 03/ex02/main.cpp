@@ -5,7 +5,7 @@
 int	main()
 {
 	ClapTrap	clap_A("Bob");
-	ScavTrap	scav_A("Bob");
+	ScavTrap	scav_A("Kevin");
 	FragTrap	frag_A("Bryan");
 
 	std::cout << "--- Claptrap : ---" << std::endl;
