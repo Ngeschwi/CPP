@@ -23,6 +23,7 @@ int	 main()
 
 	for (size_t i = 0; i < nbr; i++)
 		delete animals[i];
+	delete [] animals;
 
 	std::cout << "-------" << std::endl;
 
