@@ -2,11 +2,8 @@
 # define CONVERT_HPP
 
 # include <iostream>
-# include <string>
 # include <climits>
-# include <stdio.h>
 # include <ctype.h>
-# include <stdlib.h>
 
 class Convert
 {

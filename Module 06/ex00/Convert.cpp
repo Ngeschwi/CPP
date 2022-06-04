@@ -48,7 +48,7 @@ void	Convert::parseArg(std::string arg)
 
 	if (arg.empty())
 		throw EmptyArg();
-	if (!arg[1] && isalpha(arg[0]))
+	if (!arg[1] && isprint(arg[0]) && !isdigit(arg[0]))
 	{
 		this->setType("char");
 		return ;
