@@ -49,9 +49,21 @@ std::string	Bureaucrat::getName(void) const
 	return this->name;
 }
 
+void	Bureaucrat::setName(std::string name)
+{
+	this->name = name;
+	return ;
+}
+
 int	Bureaucrat::getGrade(void) const
 {
 	return this->grade;
+}
+
+void	Bureaucrat::setGrade(int grade)
+{
+	this->grade = grade;
+	return ;
 }
 
 void	Bureaucrat::increaseGrade(void)
@@ -59,7 +71,7 @@ void	Bureaucrat::increaseGrade(void)
 	if (this->grade <= 1)
 		throw GradeTooHighException();
 	else
-		this->grade -= 1;
+		setGrade(this->grade--);
 	return ;
 }
 
@@ -68,7 +80,7 @@ void	Bureaucrat::decreaseGrade(void)
 	if (this->grade >= 150)
 		throw GradeTooLowException();
 	else
-		this->grade += 1;
+		setGrade(this->grade++);
 	return ;
 }
 
