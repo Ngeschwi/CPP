@@ -9,6 +9,7 @@ class RobForm : public Form
 		std::string	target;
 
 	public:
+		RobForm(void);
 		RobForm(std::string target);
 		RobForm(RobForm const &src);
 

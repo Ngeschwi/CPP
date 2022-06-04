@@ -1,5 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
+RobForm::RobForm(void) : Form("RobotomyRequestForm", 72, 45), target("no_target")
+{
+	std::cout << "Default Constructor RobForm call" << std::endl;
+	return ;
+}
+
 RobForm::RobForm(std::string target) : Form("RobotomyRequestForm", 72, 45), target(target)
 {
 	std::cout << "Constructor RobForm call" << std::endl;
@@ -30,7 +36,7 @@ void	RobForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->isSigned())
 		throw FormIsNotSigned();
-	else if (executor.getGrade() > this->getExecGrade() || executor.getGrade() == 0)
+	else if (executor.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();
 	else
 	{

@@ -1,5 +1,11 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrForm::ShrForm(void) : Form("ShrubberyCreationForm", 145, 137), target("no_target")
+{
+	std::cout << "Default Constructor ShrForm call" << std::endl;
+	return ;
+}
+
 ShrForm::ShrForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), target(target)
 {
 	std::cout << "Constructor ShrForm call" << std::endl;
@@ -30,7 +36,7 @@ void	ShrForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->isSigned())
 		throw FormIsNotSigned();
-	else if (executor.getGrade() > this->getExecGrade() || executor.getGrade() == 0)
+	else if (executor.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();
 	else
 	{
