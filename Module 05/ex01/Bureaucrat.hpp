@@ -20,7 +20,9 @@ class Bureaucrat
 		Bureaucrat &	operator=(Bureaucrat const & rhs);
 
 		std::string	getName(void) const;
+		void		setName(std::string name);
 		int			getGrade(void) const;
+		void		setGrade(int grade);
 		void		increaseGrade(void);
 		void		decreaseGrade(void);
 		void		getInfoBureaucrat(void) const;
