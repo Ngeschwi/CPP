@@ -3,7 +3,7 @@
 Brain::Brain(void)
 {
 	std::cout << "Default constructor Brain called" << std::endl;
-	this->setBrain("hello");
+	this->setBrain("I don't have brain");
 	return ;
 }
 

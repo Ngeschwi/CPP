@@ -7,22 +7,22 @@
 # include <iostream>
 # include <iomanip>
 
-class Animal
+class AAnimal
 {
 	protected:
 		std::string	type;
-		Animal(void);
+		AAnimal(void);
 	
 	public:
-		Animal(Animal const & src);
+		AAnimal(AAnimal const & src);
 
-		Animal &	operator=(Animal const & rhs);
+		AAnimal &	operator=(AAnimal const & rhs);
 
 		std::string	getType(void) const;
 
 		virtual void makeSound(void) const = 0;
 		
-		virtual ~Animal(void);
+		virtual ~AAnimal(void);
 };
 
 #endif

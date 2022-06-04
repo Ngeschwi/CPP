@@ -2,11 +2,13 @@ SRCS	=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
 			Cat.cpp \
-			Brain.cpp
+			Brain.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-LINK	=	-I/Animal.hpp -I/Dog.hpp -I/Cat.hpp
+LINK	=	-I/Animal.hpp -I/Dog.hpp -I/Cat.hpp -I/WrongAnimal.hpp -I/WrongCat.hpp
 
 NAME	=	Animal
 CC		=	clang++
@@ -21,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
 
-$(OBJS) : Animal.hpp Dog.hpp Cat.hpp
+$(OBJS) : Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
 clean :
 	$(RM) $(OBJS)

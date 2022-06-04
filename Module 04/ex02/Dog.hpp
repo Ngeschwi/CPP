@@ -4,7 +4,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog : virtual public Animal
+class Dog : virtual public AAnimal
 {
 	private:
 		Brain* _Brain;

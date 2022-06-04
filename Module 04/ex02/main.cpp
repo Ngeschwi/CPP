@@ -1,33 +1,31 @@
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
 
 int	 main()
 {
-	// Animal* test = new Animal();
+	// AAnimal* test = new AAnimal();
 	// test->makeSound();
 
 	size_t	nbr = 2;
 
-	Animal* animals[nbr];
+	AAnimal* Aanimals[nbr];
 	for (size_t i = 0; i < nbr; i++)
 	{
 		if (i < nbr / 2)
-			animals[i] = new Cat();
+			Aanimals[i] = new Cat();
 		else
-			animals[i] = new Dog();
+			Aanimals[i] = new Dog();
 	}
 
 	for (size_t i = 0; i < nbr; i++)
-	{
-		animals[i]->makeSound();
-	}
+		Aanimals[i]->makeSound();
 
 	for (size_t i = 0; i < nbr; i++)
-	{
-		delete animals[i];
-	}
-	
+		delete Aanimals[i];
+
 	return 0;
 }

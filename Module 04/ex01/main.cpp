@@ -1,4 +1,6 @@
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
@@ -40,22 +42,20 @@ int	 main()
 	Dog *a = new Dog();
 	// Cat *a = new Cat();
 
-	a->setIdeas(0, "I have to sniff it");
-	a->setIdeas(1, "I have to pee on it");
-	a->setIdeas(2, "I have to sniff it again");
+	a->setIdeas(0, "I don't know what to do !");
 
 	Dog *b = new Dog(*a);
 	// Cat *b = new Cat(*a);
 	std::cout << std::endl;
 
-	std::cout << "The " << a->getType() << " a has the following ideas: " << std::endl;
+	std::cout << "The " << a->getType() << " a idea : " << std::endl;
 	std::cout << a->getIdeas(0) << std::endl;
 	std::cout << std::endl;
 
 	delete(a);
 
 	std::cout << std::endl;
-	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
+	std::cout << "The " << b->getType() << " b ideas : " << std::endl;
 	std::cout << b->getIdeas(0) << std::endl;
 	std::cout << std::endl;
 	

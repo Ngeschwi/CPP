@@ -22,6 +22,10 @@ int	 main()
 	meta->makeSound();
 	std::cout << std::endl;
 
+	delete meta;
+	delete cat;
+	delete dog;
+	
 	std::cout << "---Wrong Animal : ---" << std::endl;
 	const WrongAnimal* wrong = new WrongAnimal();
 	const WrongAnimal* wrongcat = new WrongCat();
@@ -35,9 +39,6 @@ int	 main()
 	wrongcat->makeSound();
 	std::cout << std::endl;
 
-	delete meta;
-	delete cat;
-	delete dog;
 	delete wrong;
 	delete wrongcat;
 	

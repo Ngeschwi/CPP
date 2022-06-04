@@ -1,37 +1,37 @@
 #include "Animal.hpp"
 
-Animal::Animal(void)
+AAnimal::AAnimal(void)
 {
-	std::cout << "Default constructor animal called" << std::endl;
+	std::cout << "Default constructor AAnimal called" << std::endl;
 	return ;
 }
 
-Animal::Animal(Animal const & src)
+AAnimal::AAnimal(AAnimal const & src)
 {
 	*this = src;
 	return ;
 }
 
-Animal &	Animal::operator=(Animal const & rhs)
+AAnimal &	AAnimal::operator=(AAnimal const & rhs)
 {
 	if (this != &rhs)
 		this->type = rhs.getType();
 	return *this;
 }
 
-std::string	Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return this->type;
 }
 
-void	Animal::makeSound(void) const
+void	AAnimal::makeSound(void) const
 {
-	std::cout << "I'm animal" << std::endl;
+	std::cout << "I'm Aanimal" << std::endl;
 	return ;
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
-	std::cout << "Destructor Animal called" << std::endl;
+	std::cout << "Destructor AAnimal called" << std::endl;
 	return ;
 }
