@@ -2,7 +2,6 @@
 
 int	 main()
 {
-	//check initialisation error
 	Bureaucrat* bob = new Bureaucrat("Bob", 49);
 	Bureaucrat* jean = new Bureaucrat("Jean", 1);
 	Bureaucrat* kevin = new Bureaucrat("Kevin", 150);
