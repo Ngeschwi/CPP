@@ -1,5 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
+RobForm::RobForm(void) : Form("RobotomyRequestForm", 72, 45), target("no_target")
+{
+	std::cout << "Default Constructor RobForm call" << std::endl;
+	return ;
+}
+
 RobForm::RobForm(std::string target) : Form("RobotomyRequestForm", 72, 45), target(target)
 {
 	std::cout << "Constructor RobForm call" << std::endl;

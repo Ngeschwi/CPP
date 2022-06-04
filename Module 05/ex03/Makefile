@@ -26,6 +26,7 @@ $(OBJS) : Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.
 
 clean :
 	$(RM) $(OBJS)
+	$(RM) *_shrubbery
 
 fclean : clean
 	$(RM) $(NAME)

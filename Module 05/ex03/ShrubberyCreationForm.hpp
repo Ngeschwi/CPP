@@ -9,6 +9,7 @@ class ShrForm : public Form
 		std::string	target;
 
 	public:
+		ShrForm(void);
 		ShrForm(std::string target);
 		ShrForm(ShrForm const &src);
 

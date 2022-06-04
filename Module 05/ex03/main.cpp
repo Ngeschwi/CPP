@@ -12,7 +12,10 @@ int	 main()
 	std::string formTypes[4] = { "shrubbery creation", "robotomy request", "presidential pardon", "wrong form"};
 
 	for (int i = 0; i < 4; i++)
+	{
 		forms[i] = intern.makeForm(formTypes[i], "target");
+		std::cout << "---" << std::endl;
+	}
 
 	Bureaucrat bob("Bob", 1);
 	for (int i = 0; i < 3; i++) 

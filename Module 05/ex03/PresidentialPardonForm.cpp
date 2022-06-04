@@ -1,5 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
+PreForm::PreForm(void) : Form("PresidentialPardonForm", 25, 5), target("no_target")
+{
+	std::cout << "Default Constructor PreForm call" << std::endl;
+	return ;
+}
+
 PreForm::PreForm(std::string target) : Form("PresidentialPardonForm", 25, 5), target(target)
 {
 	std::cout << "Constructor PreForm call" << std::endl;

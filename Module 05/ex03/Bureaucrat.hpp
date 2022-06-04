@@ -3,8 +3,6 @@
 
 # include <iostream>
 # include <fstream>
-# include <stdlib.h>
-# include <map>
 # include "Form.hpp"
 
 class Form;
@@ -16,6 +14,7 @@ class Bureaucrat
 		int			grade;
 
 	public:
+		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const & src);
 

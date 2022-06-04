@@ -9,6 +9,7 @@ class PreForm : public Form
 		std::string	target;
 
 	public:
+		PreForm(void);
 		PreForm(std::string target);
 		PreForm(PreForm const &src);
 

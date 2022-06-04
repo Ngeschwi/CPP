@@ -18,21 +18,36 @@ Intern &	Intern::operator=(Intern const & rhs)
 	return *this;
 }
 
-Form *	Intern::makeForm(std::string name_form, std::string name_target)
+Form	*creatsPresident(const std::string target)
 {
-	std::map<std::string, Form(std::string)> intern_form = {
-		{"shrubbery creation", new ShrForm(name_target)},
-		{"robotomy request", new RobForm(name_target)},
-		{"presidential pardon", new PreForm(name_target)}
-	};
-	std::map<std::string, Form(std::string)>::iterator it = intern_form.find(name_form);
-	if (it != intern_form.end())
-		return it->second;
-	else
+	return (new PreForm(target));
+}
+
+Form	*creatsRobot(const std::string target)
+{
+	return (new RobForm(target));
+}
+
+Form	*creatsShrubbery(const std::string target)
+{
+	return (new ShrForm(target));
+}
+
+Form	*Intern::makeForm(const std::string name_form, const std::string name_target)
+{
+	Form *(*all_forms[])(const std::string target) = {&creatsPresident, &creatsRobot, &creatsShrubbery};
+	std::string forms[] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+
+	for (int i = 0; i < 3; i++)
 	{
-		std::cout << "Intern can't make an unknown form!" << std::endl;
-		return nullptr;
+		if (name_form == forms[i])
+		{
+			std::cout << "Intern creates " << name_form << std::endl;
+			return (all_forms[i](name_target));
+		}
 	}
+	std::cout << "No form call " << name_form << std::endl;
+	return (NULL);
 }
 
 Intern::~Intern(void)
