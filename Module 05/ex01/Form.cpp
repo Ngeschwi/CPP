@@ -1,5 +1,11 @@
 #include "Form.hpp"
 
+Form::Form(void) : name("no_name"), grade_to_signe(150), grade_to_exec(150)
+{
+	std::cout << "Default Construct Form call" << std::endl;
+	return ;
+}
+
 Form::Form(std::string name, int grade_to_signe, int grade_to_exec) : name(name), grade_to_signe(grade_to_signe), grade_to_exec(grade_to_exec)
 {
 	std::cout << "Construct Form call" << std::endl;

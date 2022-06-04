@@ -14,6 +14,7 @@ class Form
 		const int			grade_to_exec;
 
 	public:
+		Form(void);
 		Form(std::string name, int grade_to_signe, int grade_to_exec);
 		Form(Form const &src);
 

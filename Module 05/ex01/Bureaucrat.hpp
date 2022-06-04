@@ -13,6 +13,7 @@ class Bureaucrat
 		int			grade;
 
 	public:
+		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const & src);
 

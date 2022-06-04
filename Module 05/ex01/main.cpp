@@ -45,7 +45,7 @@ int	 main()
 	bob->getInfoBureaucrat();
 	jean->getInfoBureaucrat();
 	kevin->getInfoBureaucrat();
-	
+
 	std::cout << "---" << std::endl;
 	
 	Form form("Form", 5, 50);
@@ -58,4 +58,6 @@ int	 main()
 	delete bob;
 	delete jean;
 	delete kevin;
+
+	return 0;
 }

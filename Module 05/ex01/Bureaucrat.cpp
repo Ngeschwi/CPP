@@ -1,12 +1,18 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(void) : name("no_name"), grade(150)
+{
+	std::cout << "Default Constructor Bureaucrat call" << std::endl;
+	return ;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	std::cout << "Constructor Bureaucrat call" << std::endl;
 	if (grade < 1 || grade > 150)
 	{
-		std::cout << "Error grade, initialisation grade at 0" << std::endl;
-		this->grade = 0;
+		std::cout << "Error grade, initialisation grade at 150" << std::endl;
+		this->grade = 150;
 		if (grade < 1)
 			throw GradeTooHighException();
 		else
