@@ -2,18 +2,20 @@
 
 Convert::Convert() : value(0.0), type("")
 {
-	std::cout << "Constructor Convert call" << std::endl;
+	std::cout << "Default Constructor Convert call" << std::endl;
 	return ;
 }
 
 Convert::Convert(Convert const & src)
 {
+	std::cout << "Copy Constructor Convert call" << std::endl;
 	*this = src;
 	return ;
 }
 
 Convert &	Convert::operator=(Convert const & rhs)
 {
+	std::cout << "Assign Constructor Convert call" << std::endl;
 	if (this != &rhs)
 		this->value = rhs.getValue();
 	return *this;
@@ -69,12 +71,12 @@ void	Convert::parseArg(std::string arg)
 	}
 	if (f == 1 && arg[i - 1] != 'f')
 		throw NoNumericArg();
-	if (arg[i - 1] == '.')
-	{
-		arg = arg.substr(0, arg.size() - 1);
-		this->setType("int");
-		return ;
-	}
+	// if (arg[i - 1] == '.')
+	// {
+	// 	arg = arg.substr(0, arg.size() - 1);
+	// 	this->setType("int");
+	// 	return ;
+	// }
 	if (dot == 0 & f == 0)
 		this->setType("int");
 	else if (f == 0)
