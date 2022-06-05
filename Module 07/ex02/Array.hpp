@@ -35,13 +35,14 @@ class Array
 template <class T>
 Array<T>::Array(void) : _size(0), _array(nullptr)
 {
-	std::cout << "Constructor Array call" << std::endl;
+	std::cout << "Default Constructor Array call" << std::endl;
 	return ;
 }
 
 template <class T>
 Array<T>::Array(unsigned int n) : _size(n)
 {
+	std::cout << "Constructor Array call" << std::endl;
 	this->_array = new T[n];
 	for(unsigned int i = 0; i < n; i++)
 		this->_array[i] = i;
@@ -51,6 +52,7 @@ Array<T>::Array(unsigned int n) : _size(n)
 template <class T>
 Array<T>::Array(const Array<T> &src)
 {
+	std::cout << "Copy Constructor Array call" << std::endl;
 	*this = src;
 	return ;
 }
@@ -86,6 +88,7 @@ template <class T>
 Array<T>::~Array(void)
 {
 	std::cout << "Destructor Array call" << std::endl;
+	delete this->_array;
 	return ;
 }
 

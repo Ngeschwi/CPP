@@ -2,21 +2,21 @@
 
 int	 main()
 {
-	Bureaucrat* bob = new Bureaucrat("Bob", 49);
-	Bureaucrat* jean = new Bureaucrat("Jean", 1);
-	Bureaucrat* kevin = new Bureaucrat("Kevin", 150);
+	Bureaucrat bob("Bob", 49);
+	Bureaucrat jean("Jean", 1);
+	Bureaucrat kevin("Kevin", 150);
 
 	std::cout << "---" << std::endl;
 	
-	bob->getInfoBureaucrat();
-	jean->getInfoBureaucrat();
-	kevin->getInfoBureaucrat();
+	bob.getInfoBureaucrat();
+	jean.getInfoBureaucrat();
+	kevin.getInfoBureaucrat();
 
 	std::cout << "---" << std::endl;
 	
 	try
 	{
-		bob->increaseGrade();
+		bob.increaseGrade();
 	}
 	catch (std::exception &e)
 	{
@@ -24,7 +24,7 @@ int	 main()
 	}
 	try
 	{
-		jean->increaseGrade();
+		jean.increaseGrade();
 	}
 	catch (std::exception &e)
 	{
@@ -32,7 +32,7 @@ int	 main()
 	}
 	try
 	{
-		kevin->decreaseGrade();
+		kevin.decreaseGrade();
 	}
 	catch (std::exception &e)
 	{
@@ -41,13 +41,11 @@ int	 main()
 
 	std::cout << "---" << std::endl;
 	
-	bob->getInfoBureaucrat();
-	jean->getInfoBureaucrat();
-	kevin->getInfoBureaucrat();
+	bob.getInfoBureaucrat();
+	jean.getInfoBureaucrat();
+	kevin.getInfoBureaucrat();
 	
 	std::cout << "---" << std::endl;
-	
-	delete bob;
-	delete jean;
-	delete kevin;
+
+	return 0;
 }
