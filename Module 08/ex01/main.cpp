@@ -76,6 +76,14 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	try
+	{
+		span_range_insert.addWithIterator(range_insert);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	std::cout << "Span : " << std::endl;
 	span_range_insert.printSpan();
 

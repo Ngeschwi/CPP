@@ -70,7 +70,7 @@ void	Span::addWithIterator(std::vector<int> range_insert)
 		throw SpanFull();
 	else
 	{
-		it = this->_span.begin();
+		it = this->_span.end();
 		this->_span.insert(it, range_insert.begin(), range_insert.end());
 	}
 }
