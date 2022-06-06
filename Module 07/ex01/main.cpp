@@ -2,14 +2,22 @@
 
 int	main()
 {
-	int	size = 10;
-	int *tab = new int[size];
+	int	size = 5;
+	int *tab_int = new int[size];
+	std::string *tab_string = new std::string[size];
 
 	for (int i = 0; i < size; i++)
-		tab[i] = i;
-	::inter(tab, size, &(::fct_print));
+		tab_int[i] = i;
+	::inter(tab_int, size, &(::fct_print));
 
-	delete [] tab;
+	std::cout << "---" << std::endl;
+
+	for (int i = 0; i < size; i++)
+		tab_string[i] = "hi";
+	::inter(tab_string, size, &(::fct_print));
+
+	delete [] tab_int;
+	delete [] tab_string;
 
 	return 0;
 }
