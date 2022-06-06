@@ -1,5 +1,11 @@
 #include "Span.hpp"
 
+Span::Span(void) : N(0)
+{
+	std::cout << "Default Constructor Span call" << std::endl;
+	return ;
+}
+
 Span::Span(unsigned int N) : N(N)
 {
 	std::cout << "Constructor Span call" << std::endl;

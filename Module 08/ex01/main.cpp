@@ -17,6 +17,8 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "Span : " << std::endl;
+	sp->printSpan();
 	std::cout << sp->shortestSpan() << std::endl;
 	std::cout << sp->longestSpan() << std::endl;
 	
@@ -42,7 +44,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "Span : ";
+	std::cout << "Span : " << std::endl;
 	span.printSpan();
 	try
 	{
@@ -63,11 +65,8 @@ int main()
 
 	std::cout << "----" << std::endl;
 
-	Span span_range_insert(10);
-	std::vector<int> range_insert;
-	range_insert.push_back(5);
-	range_insert.push_back(9);
-	range_insert.push_back(2);
+	Span span_range_insert(11);
+	std::vector<int> range_insert(10, 5);
 	range_insert.push_back(6);
 	try
 	{
@@ -77,7 +76,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "Span : ";
+	std::cout << "Span : " << std::endl;
 	span_range_insert.printSpan();
 
 	return 0;
