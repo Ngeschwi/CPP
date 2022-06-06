@@ -1,55 +1,128 @@
 #include "Array.hpp"
 
-int	main()
+#define MAX_VAL 10
+int main(int, char**)
 {
-	Array<int>	int_array(5);
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
 
-	for (int i = 0; i < int_array.size(); i++)
-		int_array[i] = i;
+	std::cout << std::endl;
 	
-	std::cout << "Size of int_array : " << int_array.size() << std::endl;
-	for (int i = 0; i < int_array.size() + 1; i++)
-	{
-		try
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = i;
+        mirror[i] = i;
+    }
+
+	std::cout << "--- Check number and mirror : ---" << std::endl;
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+    	try
 		{
-			std::cout << "Index " << i << " : " << int_array[i] << std::endl;
+		   std::cout << "numbers[" << i << "] : " << numbers[i] << " <=> " << mirror[i] << " : mirror[" << i << "]" << std::endl;
 		}
-		catch (std::exception &e)
+		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << e.what() << '\n';
 		}
-	}
+    }
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    // 	try
+	// 	{
+	// 	   std::cout << "mirror[" << i << "]  : " << mirror[i] << std::endl;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 
-	std::cout << "---" << std::endl;
+	std::cout << std::endl << "--- Try to acces to number with a bad index : ---" << std::endl;
+    
+	try
+    {
+		std::cout << "numbers[" << -2 << "] : " << numbers[-2] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+		std::cout << "numbers[" << MAX_VAL << "] : " << numbers[MAX_VAL] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-	Array<std::string>	string_array(5);
+	std::cout << std::endl << "--- Check deep copy : ---" << std::endl;
+ 
+	Array<int> tmp = numbers;
+	Array<int> test(tmp);
 
-	string_array[0] = "Hello";
-	string_array[1] = "My";
-	string_array[2] = "Name";
-	string_array[3] = "Is";
-	string_array[4] = "Pablo";
-	std::cout << "Size of string_array : " << int_array.size() << std::endl;
-	for (int i = 0; i < string_array.size() + 1; i++)
-	{
-		try
+	std::cout << std::endl;
+
+	for (int i = 0; i < MAX_VAL; i++)
+        numbers[i] = rand() % 10;
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+    	try
 		{
-			std::cout << "Index " << i << " : " << string_array[i] << std::endl;
+		   std::cout << "numbers[" << i << "] : " << numbers[i] << " <=> " << mirror[i] << " : test[" << i << "]"  << std::endl;
 		}
-		catch (std::exception &e)
+		catch(const std::exception& e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << '\n';
 		}
-	}
+    }
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    // 	try
+	// 	{
+	// 	   std::cout << "test[" << i << "]    : " << test[i] << std::endl;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 
-	std::cout << "---" << std::endl;
+	std::cout << std::endl;
 
-	Array<int> int_array_bis(int_array);
+	for (int i = 0; i < MAX_VAL; i++)
+        test[i] = rand() % 10;
 
-	int_array_bis[0] = 100;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+    	try
+		{
+		   std::cout << "test[" << i << "] : " << test[i] << " <=> " << tmp[i] << " : tmp[" << i << "]"  << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+    }
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    // 	try
+	// 	{
+	// 	   std::cout << "tmp[" << i << "]  : " << tmp[i] << std::endl;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 
-	std::cout << "int_array : " << int_array[0] << std::endl;
-	std::cout << "int_array_bis : " << int_array_bis[0] << std::endl;
+	std::cout << std::endl;
 
-	return 0;
+    delete [] mirror;
+
+    return 0;
 }

@@ -60,6 +60,7 @@ Array<T>::Array(const Array<T> &src)
 template <class T>
 Array<T> &	Array<T>::operator=(const Array<T> &rhs)
 {
+	std::cout << "Assign Constructor Array call" << std::endl;
 	if (this != &rhs)
 	{
 		this->_size = rhs.size();
