@@ -10,7 +10,7 @@ RM		=	rm -rf
 
 all : $(NAME)
 
-%.o : %.cpp 
+%.o : %.cpp Makefile
 	$(CC) $(CFLAGS) $(LINK) -o $@ -c $<
 
 $(NAME) : $(OBJS)
