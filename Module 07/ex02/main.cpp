@@ -73,7 +73,7 @@ int main(int, char**)
     {
     	try
 		{
-		   std::cout << "numbers[" << i << "] : " << numbers[i] << " <=> " << mirror[i] << " : test[" << i << "]"  << std::endl;
+		   std::cout << "numbers[" << i << "] : " << numbers[i] << " <=> " << tmp[i] << " : tmp[" << i << "]"  << std::endl;
 		}
 		catch(const std::exception& e)
 		{
@@ -95,13 +95,13 @@ int main(int, char**)
 	std::cout << std::endl;
 
 	for (int i = 0; i < MAX_VAL; i++)
-        test[i] = rand() % 10;
+        tmp[i] = rand() % 10;
 
     for (int i = 0; i < MAX_VAL; i++)
     {
     	try
 		{
-		   std::cout << "test[" << i << "] : " << test[i] << " <=> " << tmp[i] << " : tmp[" << i << "]"  << std::endl;
+		   std::cout << "tmp[" << i << "] : " << tmp[i] << " <=> " << test[i] << " : test[" << i << "]"  << std::endl;
 		}
 		catch(const std::exception& e)
 		{
