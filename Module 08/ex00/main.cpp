@@ -2,11 +2,15 @@
 
 int main()
 {
-	std::vector<int> container_int {10, 20, 30, 40, 1111};
+	std::vector<int> container_int(6);
+
+	for (int i = 0; i < 5; i++)
+		container_int[i] = i;
+	container_int[5] = 111;
 
 	try
 	{
-		easyfind(container_int, 30);
+		easyfind(container_int, 4);
 	}
 	catch (std::exception &e)
 	{
@@ -15,7 +19,7 @@ int main()
 	std::cout << "---" << std::endl;
 	try
 	{
-		easyfind(container_int, 70);
+		easyfind(container_int, 0);
 	}
 	catch (std::exception &e)
 	{
